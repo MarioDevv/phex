@@ -1,0 +1,29 @@
+# Composer
+/vendor/
+/composer.lock
+
+# PHPUnit cache
+/.phpunit.cache/
+/.phpunit.result.cache
+/coverage/
+
+# Logs
+*.log
+
+# IDEs
+/.idea/
+/*.iml
+*.sublime-project
+*.sublime-workspace
+/.vscode/
+/nbproject/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup & temp
+*.bak
+*.tmp
+*.swp
+*~
