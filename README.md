@@ -1,7 +1,10 @@
 # Phex
 
-**Phex** is a lightweight PHP starter structure focused on **Domain-Driven Design (DDD)** and **Hexagonal Architecture**.
-It is not a full framework — instead, it's a minimal base structure that helps you **start real projects fast**
+> ⚠️ **Phex is in an early stage of development.**  
+> Things might change — contributions and feedback are welcome!
+
+**Phex** is a lightweight PHP starter structure focused on **Domain-Driven Design (DDD)** and **Hexagonal Architecture**.  
+It is not a full framework — instead, it's a minimal base structure that helps you **start real projects fast**  
 by avoiding unnecessary dependencies, configuration files, and excessive boilerplate code.
 
 ---
@@ -9,9 +12,10 @@ by avoiding unnecessary dependencies, configuration files, and excessive boilerp
 ## ✨ Why Phex?
 
 Frameworks like Laravel or Symfony are powerful, but they often come with:
-- Heavy layers of infrastructure
-- Complex bootstrapping
-- Opinionated conventions that don't always match clean DDD
+
+- Heavy layers of infrastructure  
+- Complex bootstrapping  
+- Opinionated conventions that don't always match clean DDD  
 
 **Phex offers a clean foundation where you control the architecture from day one.**
 
@@ -19,13 +23,13 @@ Frameworks like Laravel or Symfony are powerful, but they often come with:
 
 ## 🚀 Features
 
-- PSR-4 compliant structure
-- Ready for DDD (`Application`, `Domain`, `Infrastructure`, `Shared`)
-- Hexagonal design with clear separation of concerns
-- In-memory repositories for unit and acceptance testing
-- No database or HTTP layer by default
-- 100% testable with PHPUnit
-- Easy integration with Slim, Laravel, Symfony Console, etc.
+- ✅ PSR-4 compliant structure  
+- 🧩 Ready for DDD (`Application`, `Domain`, `Infrastructure`, `Shared`)  
+- 🛡️ Hexagonal design with clear separation of concerns  
+- 🧪 In-memory repositories for unit and acceptance testing  
+- 🧼 No database or HTTP layer by default  
+- 🧪 100% testable with PHPUnit  
+- 🔌 Easy integration with Slim, Laravel, Symfony Console, etc.
 
 ---
 
@@ -73,13 +77,18 @@ Start coding your first module in `src/` and implement your use cases inside `Ap
 
 ## 📦 Who is this for?
 
-- Developers who want full control over their app architecture
-- People applying DDD and Hexagonal Architecture in real PHP projects
-- Teams building microservices, APIs, or CLI tools without full frameworks
+- Developers who want full control over their app architecture  
+- People applying DDD and Hexagonal Architecture in real PHP projects  
+- Teams building microservices, APIs, or CLI tools without full frameworks  
 - Anyone tired of unnecessary boilerplate
 
 ---
 
 ## 🤝 Contributing
 
-Feel free to fork, improve and submit PRs. This is a starting point, not the final word.
+Feel free to fork, improve and submit PRs.  
+**This is a starting point, not the final word.**
+
+---
+
+¿Quieres que te ayude a convertir esto en un `README.md` listo para el repo o agregar una sección como "Roadmap" o "Limitaciones actuales"?
