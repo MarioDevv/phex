@@ -8,5 +8,5 @@ use Slim\App;
 
 return function (App $app): void {
     $app->post('/tasks', CreateTaskController::class);
-    $app->get('/tasks/{id}', FindTaskController::class);
+    $app->get('/task/{id}', FindTaskController::class);
 };

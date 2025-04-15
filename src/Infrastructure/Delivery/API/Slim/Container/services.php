@@ -12,8 +12,16 @@ use Phex\Shared\Infrastructure\Http\Validation\ValidatorInterface;
 
 return function (Container $container): void {
 
-    // Test purpose only
+    // --- TEST PURPOSE ONLY --- //
     $repository = new InMemoryTaskRepository();
+
+    $task = \Phex\Tests\Shared\Domain\Model\Task\TaskMother::create(
+        new \Phex\Domain\Model\Task\TaskId('00000000-0000-0000-0000-000000000001'),
+    );
+
+    $repository->save($task);
+
+    // --- TEST PURPOSE ONLY --- //
 
     $container->set(TaskRepository::class, $repository);
 

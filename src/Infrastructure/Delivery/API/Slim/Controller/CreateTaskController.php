@@ -14,7 +14,7 @@ class CreateTaskController extends BaseController
 {
 
     private array $rules = [
-        'title' => 'required|regex:/^[\pL\s]+$/u'
+        'title' => 'required'
     ];
 
 

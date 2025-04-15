@@ -3,8 +3,9 @@
 namespace Phex\Domain\Model\Task;
 
 use DateTimeImmutable;
+use JsonSerializable;
 
-class Task
+class Task implements JsonSerializable
 {
     public function __construct(
         private TaskId            $id,
@@ -69,4 +70,17 @@ class Task
     {
         return $this->createdAt;
     }
+
+    public function jsonSerialize(): array
+    {
+        return [
+            'id'          => $this->id->value(),
+            'title'       => $this->title->value(),
+            'description' => $this->description,
+            'status'      => $this->status->value,
+            'createdAt'   => $this->createdAt->format('Y-m-d H:i:s'),
+        ];
+    }
+
+
 }

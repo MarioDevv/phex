@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace Phex\Shared\Infrastructure\Http;
 
+use DateMalformedStringException;
+use DateTimeImmutable;
+use InvalidArgumentException;
 use Phex\Shared\Infrastructure\Http\Validation\ValidatorInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use ReflectionClass;
-use InvalidArgumentException;
+use ReflectionException;
 
 final class SmartRequestFactory
 {
@@ -20,15 +23,16 @@ final class SmartRequestFactory
      * @param ValidatorInterface $validator The validator instance.
      * @param array $rules The validation rules.
      * @return object The instantiated DTO.
-     * @throws \DateMalformedStringException
-     * @throws \ReflectionException
+     * @throws DateMalformedStringException
+     * @throws ReflectionException
      */
     public static function instantiate(
         ServerRequestInterface $request,
-        string $dtoClass,
-        ValidatorInterface $validator,
-        array $rules
-    ): object {
+        string                 $dtoClass,
+        ValidatorInterface     $validator,
+        array                  $rules
+    ): object
+    {
 
         $data = $request->getParsedBody() ?? [];
 
@@ -38,18 +42,38 @@ final class SmartRequestFactory
     }
 
     /**
+     * @param array $data The data to be validated and used to instantiate the DTO.
+     * @param string $dtoClass The class name of the DTO.
+     * @param ValidatorInterface $validator The validator instance.
+     * @param array $rules The validation rules.
+     * @return object The instantiated DTO.
+     * @throws DateMalformedStringException
+     * @throws ReflectionException
+     */
+    public static function instantiateFromArray(
+        array              $data,
+        string             $dtoClass,
+        ValidatorInterface $validator,
+        array              $rules
+    ): object
+    {
+        $validator->validate($data, $rules);
+        return self::hydrate($dtoClass, $data);
+    }
+
+    /**
      * Hydrate the DTO with the data from the request.
      *
      * @param string $dtoClass The class name of the DTO.
      * @param array $data The data to hydrate the DTO with.
      * @return object The hydrated DTO.
-     * @throws \DateMalformedStringException
-     * @throws \ReflectionException
+     * @throws DateMalformedStringException
+     * @throws ReflectionException
      */
     private static function hydrate(string $dtoClass, array $data): object
     {
         $reflection = new ReflectionClass($dtoClass);
-        $args = [];
+        $args       = [];
 
         foreach ($reflection->getConstructor()?->getParameters() ?? [] as $param) {
             $name = $param->getName();
@@ -66,8 +90,10 @@ final class SmartRequestFactory
 
             $value = $data[$name];
 
-            if ($type === \DateTimeImmutable::class) {
-                $value = new \DateTimeImmutable($value);
+            if ($type === DateTimeImmutable::class) {
+                $value = new DateTimeImmutable($value);
+            } elseif (class_exists($type)) {
+                $value = new $type($value);
             }
 
             $args[] = $value;
