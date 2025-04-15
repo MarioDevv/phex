@@ -17,7 +17,6 @@ class CreateTask
         $task = Task::new(
             $request->title(),
             $request->description(),
-            $request->createdAt()
         );
 
         $this->repository->save($task);

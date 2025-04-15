@@ -17,9 +17,8 @@ class Task
     }
 
     public static function new(
-        string            $title,
-        string            $description,
-        DateTimeImmutable $createdAt
+        string $title,
+        string $description,
     ): Task
     {
         return new self(
@@ -27,7 +26,7 @@ class Task
             new TaskTitle($title),
             $description,
             TaskStatus::TODO,
-            $createdAt
+            new DateTimeImmutable()
         );
     }
 
