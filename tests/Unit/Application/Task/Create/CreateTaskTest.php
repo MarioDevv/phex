@@ -26,7 +26,6 @@ class CreateTaskTest extends TestCase
                 $this->assertEquals('Título', (string) $task->title());
                 $this->assertEquals('Descripción', $task->description());
                 $this->assertEquals('todo', $task->status()->value);
-                $this->assertEquals(new DateTimeImmutable('2025-04-14 20:00:00'), $task->createdAt());
                 return true;
             }));
 
@@ -35,7 +34,6 @@ class CreateTaskTest extends TestCase
         $request = new CreateTaskRequest(
             'Título',
             'Descripción',
-            new DateTimeImmutable('2025-04-14 20:00:00')
         );
 
         $useCase($request);

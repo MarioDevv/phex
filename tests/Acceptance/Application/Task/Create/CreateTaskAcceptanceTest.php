@@ -20,9 +20,8 @@ class CreateTaskAcceptanceTest extends TestCase
 
         $title = 'Write acceptance test';
         $description = 'Verify that the task can be created';
-        $createdAt = new DateTimeImmutable();
 
-        $request = new CreateTaskRequest($title, $description, $createdAt);
+        $request = new CreateTaskRequest($title, $description);
 
         $useCase($request);
 
@@ -33,7 +32,6 @@ class CreateTaskAcceptanceTest extends TestCase
         $this->assertEquals($title, (string) $tasks[0]->title());
         $this->assertEquals($description, $tasks[0]->description());
         $this->assertEquals(TaskStatus::TODO, $tasks[0]->status());
-        $this->assertEquals($createdAt, $tasks[0]->createdAt());
 
     }
 
