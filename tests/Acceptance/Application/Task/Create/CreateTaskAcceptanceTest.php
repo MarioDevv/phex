@@ -1,6 +1,6 @@
 <?php
 
-namespace Phex\Tests\Acceptance\Task\Create;
+namespace Phex\Tests\Acceptance\Application\Task\Create;
 
 use DateTimeImmutable;
 use Phex\Application\Task\Create\CreateTask;

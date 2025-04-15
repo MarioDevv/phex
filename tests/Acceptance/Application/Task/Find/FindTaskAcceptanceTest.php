@@ -1,10 +1,7 @@
 <?php
 
-namespace Phex\Tests\Acceptance\Task\Find;
+namespace Phex\Tests\Acceptance\Application\Task\Find;
 
-use DateTimeImmutable;
-use Phex\Application\Task\Create\CreateTask;
-use Phex\Application\Task\Create\CreateTaskRequest;
 use Phex\Application\Task\Find\FindTask;
 use Phex\Application\Task\Find\FindTaskRequest;
 use Phex\Domain\Model\Task\TaskId;
