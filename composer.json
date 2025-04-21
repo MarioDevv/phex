@@ -1,7 +1,11 @@
 {
   "name": "phex/phex",
   "description": "A lightweight DDD & ports-and-adapters foundation for PHP applications",
-  "type": "library",
+  "type": "proyect",
+  "keywords": [
+    "php",
+    "framework"
+  ],
   "license": "MIT",
   "authors": [
     {
