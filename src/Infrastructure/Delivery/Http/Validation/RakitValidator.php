@@ -1,6 +1,6 @@
 <?php
 
-namespace Phex\Shared\Infrastructure\Http\Validation;
+namespace Phex\Infrastructure\Delivery\Http\Validation;
 
 use InvalidArgumentException as ValidationError;
 use Rakit\Validation\Validator;

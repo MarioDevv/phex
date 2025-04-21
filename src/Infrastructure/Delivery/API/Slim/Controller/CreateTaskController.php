@@ -4,8 +4,8 @@ namespace Phex\Infrastructure\Delivery\API\Slim\Controller;
 
 use Phex\Application\Task\Create\CreateTask;
 use Phex\Application\Task\Create\CreateTaskRequest;
-use Phex\Shared\Infrastructure\Http\SmartRequestFactory;
-use Phex\Shared\Infrastructure\Http\Validation\ValidatorInterface;
+use Phex\Infrastructure\Delivery\Http\SmartRequestFactory;
+use Phex\Infrastructure\Delivery\Http\Validation\ValidatorInterface;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Throwable;

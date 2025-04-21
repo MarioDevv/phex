@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Phex\Shared\Infrastructure\Http;
+namespace Phex\Infrastructure\Delivery\Http;
 
 use DateMalformedStringException;
 use DateTimeImmutable;
 use InvalidArgumentException;
-use Phex\Shared\Infrastructure\Http\Validation\ValidatorInterface;
+use Phex\Infrastructure\Delivery\Http\Validation\ValidatorInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use ReflectionClass;
 use ReflectionException;

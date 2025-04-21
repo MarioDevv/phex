@@ -2,7 +2,7 @@
 
 namespace Phex\Domain\Model\Task;
 
-use Phex\Shared\Domain\DomainError;
+use Phex\Domain\DomainError;
 
 class TaskNotFound extends DomainError
 {

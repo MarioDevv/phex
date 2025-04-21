@@ -3,7 +3,6 @@
 namespace Phex\Infrastructure\Delivery\API\Slim\Controller;
 
 use JsonException;
-use Phex\Shared\Infrastructure\Http\SmartRequestFactory;
 use Psr\Http\Message\ResponseInterface as Response;
 
 abstract class BaseController

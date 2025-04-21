@@ -1,6 +1,6 @@
 <?php
 
-namespace Phex\Shared\Domain;
+namespace Phex\Infrastructure\Domain;
 
 use InvalidArgumentException;
 use Ramsey\Uuid\Uuid as RamseyUuid;

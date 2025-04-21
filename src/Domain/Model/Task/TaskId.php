@@ -2,7 +2,7 @@
 
 namespace Phex\Domain\Model\Task;
 
-use Phex\Shared\Domain\Uuid;
+use Phex\Infrastructure\Domain\Uuid;
 
 class TaskId extends Uuid
 {

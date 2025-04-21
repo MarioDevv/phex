@@ -6,9 +6,9 @@ use DI\Container;
 use Phex\Application\Task\Create\CreateTask;
 use Phex\Application\Task\Find\FindTask;
 use Phex\Domain\Model\Task\TaskRepository;
+use Phex\Infrastructure\Delivery\Http\Validation\RakitValidator;
+use Phex\Infrastructure\Delivery\Http\Validation\ValidatorInterface;
 use Phex\Infrastructure\Domain\Model\Task\InMemory\InMemoryTaskRepository;
-use Phex\Shared\Infrastructure\Http\Validation\RakitValidator;
-use Phex\Shared\Infrastructure\Http\Validation\ValidatorInterface;
 
 return function (Container $container): void {
 

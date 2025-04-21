@@ -1,6 +1,6 @@
 <?php
 
-namespace Phex\Shared\Domain;
+namespace Phex\Domain;
 
 use DomainException;
 
